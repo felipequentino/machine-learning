@@ -69,10 +69,8 @@ cm = confusion_matrix(y_test, y_pred)
 print("Matriz de confusão: ", accuracy_score(y_test, y_pred))
 print(cm)
 
-# Usando o Naive-Bayes do sklearn
-
+# Usando Naive Bayes com a biblioteca sklearn
 from sklearn.naive_bayes import GaussianNB
-from sklearn import metrics
 
 model = GaussianNB()
 model.fit(X_train, y_train)
@@ -81,8 +79,7 @@ y_pred = model.predict(X_test)
 score = accuracy_score(y_pred, y_test)
 print("Acurácia: ", score)
 
-df = pd.DataFrame({'Real Values': y_test, 'Predicted Values': y_pred})
-print(df)
+
 # Outra maneira de efetuarmos a classificação é assumirmos que
 # os atributos possuem distribuição diferente do normal.
 # UMa possibilidade é assumirmos que os dados possuem distribuição de Benroulli.
